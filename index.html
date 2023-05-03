@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>CKEditor 5 Quick start guide</title>
+  </head>
+  <body>
+    <div id="editor">
+      <p>The editor content goes here.</p>
+    </div>
+
+    <script
+      type="text/javascript"
+      src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/MathJax.js?config=TeX-MML-AM_CHTML"
+    ></script>
+    <script>
+      MathJax.Ajax.config.path["mhchem"] =
+        "https://cdnjs.cloudflare.com/ajax/libs/mathjax-mhchem/3.3.2";
+      MathJax.Hub.Config({
+        showMathMenu: false,
+        TeX: {
+          extensions: ["[mhchem]/mhchem.js"],
+        },
+        messageStyle: "none",
+        tex2jax: {
+          preview: "none",
+        },
+      });
+    </script>
+    <script src="dist/bundle.js"></script>
+    <script>
+      ClassicEditor.create(document.querySelector("#editor"))
+        .then((editor) => {
+          console.log("Editor was initialized", editor);
+        })
+        .catch((error) => {
+          console.error(error.stack);
+        });
+    </script>
+  </body>
+</html>
