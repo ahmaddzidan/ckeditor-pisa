@@ -15,6 +15,8 @@ import ImageCaption from "@ckeditor/ckeditor5-image/src/imagecaption.js";
 import ImageStyle from "@ckeditor/ckeditor5-image/src/imagestyle.js";
 import ImageToolbar from "@ckeditor/ckeditor5-image/src/imagetoolbar.js";
 import ImageUpload from "@ckeditor/ckeditor5-image/src/imageupload.js";
+import ImageResize from "@ckeditor/ckeditor5-image/src/imageresize";
+import ImageInsert from "@ckeditor/ckeditor5-image/src/imageinsert";
 import Indent from "@ckeditor/ckeditor5-indent/src/indent.js";
 import Italic from "@ckeditor/ckeditor5-basic-styles/src/italic.js";
 import Link from "@ckeditor/ckeditor5-link/src/link.js";
@@ -52,6 +54,8 @@ ClassicEditor.builtinPlugins = [
   ImageStyle,
   ImageToolbar,
   ImageUpload,
+  ImageResize,
+  ImageInsert,
   Indent,
   Italic,
   Link,
@@ -104,12 +108,34 @@ ClassicEditor.defaultConfig = {
   },
   language: "en",
   image: {
+    resizeUnit: "%",
+    resizeOptions: [
+      {
+        name: "resizeImage:original",
+        label: "Original",
+        value: null,
+      },
+      {
+        name: "resizeImage:20",
+        label: "25%",
+        value: "25",
+      },
+      {
+        name: "resizeImage:40",
+        label: "50%",
+        value: "50",
+      },
+      {
+        name: "resizeImage:60",
+        label: "75%",
+        value: "75",
+      },
+    ],
     toolbar: [
-      "imageTextAlternative",
-      "toggleImageCaption",
       "imageStyle:inline",
-      "imageStyle:block",
-      "imageStyle:side",
+      "imageStyle:wrapText",
+      "imageStyle:breakText",
+      "resizeImage",
     ],
   },
   table: {
