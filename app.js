@@ -36,6 +36,7 @@ import TextTransformation from "@ckeditor/ckeditor5-typing/src/texttransformatio
 import WordCount from "@ckeditor/ckeditor5-word-count/src/wordcount.js";
 import Math from "@isaul32/ckeditor5-math/src/math";
 import AutoformatMath from "@isaul32/ckeditor5-math/src/autoformatmath";
+import Font from "@ckeditor/ckeditor5-font/src/font";
 
 export default class ClassicEditor extends ClassicEditorBase {}
 
@@ -74,6 +75,7 @@ ClassicEditor.builtinPlugins = [
   TextTransformation,
   WordCount,
   Math,
+  Font,
   AutoformatMath,
 ];
 
@@ -82,6 +84,8 @@ ClassicEditor.defaultConfig = {
   toolbar: {
     items: [
       "heading",
+      "|",
+      "fontSize",
       "|",
       "bold",
       "italic",
