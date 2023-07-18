@@ -34,9 +34,10 @@ import TableProperties from "@ckeditor/ckeditor5-table/src/tableproperties";
 import TableToolbar from "@ckeditor/ckeditor5-table/src/tabletoolbar.js";
 import TextTransformation from "@ckeditor/ckeditor5-typing/src/texttransformation.js";
 import WordCount from "@ckeditor/ckeditor5-word-count/src/wordcount.js";
-import Math from "@isaul32/ckeditor5-math/src/math";
-import AutoformatMath from "@isaul32/ckeditor5-math/src/autoformatmath";
+// import Math from "@isaul32/ckeditor5-math/src/math";
+// import AutoformatMath from "@isaul32/ckeditor5-math/src/autoformatmath";
 import Font from "@ckeditor/ckeditor5-font/src/font";
+import MathType from '@wiris/mathtype-ckeditor5/src/plugin';
 
 export default class ClassicEditor extends ClassicEditorBase {}
 
@@ -74,9 +75,10 @@ ClassicEditor.builtinPlugins = [
   TableToolbar,
   TextTransformation,
   WordCount,
-  Math,
+  // Math,
   Font,
-  AutoformatMath,
+  // AutoformatMath,
+  MathType
 ];
 
 // Editor configuration.
@@ -103,7 +105,9 @@ ClassicEditor.defaultConfig = {
       "removeFormat",
       "blockQuote",
       "insertTable",
-      "math",
+      // "math",
+      "MathType", 
+      "ChemType",
       "findAndReplace",
       "sourceEditing",
       "undo",

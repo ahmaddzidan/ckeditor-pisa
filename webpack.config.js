@@ -42,12 +42,12 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /ckeditor5-[^/\\]+[/\\]theme[/\\]icons[/\\][^/\\]+\.svg$/,
+        test: /\.svg$/,
 
         use: ["raw-loader"],
       },
       {
-        test: /ckeditor5-[^/\\]+[/\\]theme[/\\].+\.css$/,
+        test: /\.css$/,
 
         use: [
           {
